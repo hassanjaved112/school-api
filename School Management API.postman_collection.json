@@ -1,0 +1,713 @@
+{
+	"info": {
+		"_postman_id": "f3b97515-bf08-41d9-90c8-300a6c6403bb",
+		"name": "School Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32763317"
+	},
+	"item": [
+		{
+			"name": "Admin Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"admin\", \"password\": \"1234\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\": \"admin\", \"password\": \"1234\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Student",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"fatima\",\r\n  \"lastName\": \"farrukh\",\r\n  \"email\": \"fatima.farrukh@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all students",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Student by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Student",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Ali\",\r\n    \"lastName\": \"Ahmed\",\r\n    \"email\": \"ali.ahmed@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Student",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Courses",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Physics\",\r\n  \"description\": \"Study of matter and Energy\",\r\n  \"capacity\": 50,\r\n  \"prerequisites\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Course (With Prerequisites)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Geology\",\r\n  \"description\": \"Study of Earth and Planets\",\r\n  \"capacity\": 40,\r\n  \"prerequisites\": [\r\n    { \"id\": 3 }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all courses",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Course by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/courses/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Course",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"General Science\",\r\n  \"description\": \"Updated description\",\r\n  \"capacity\": 60,\r\n  \"prerequisites\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/courses/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Course",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/courses/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll Student",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/enrollments?studentId=1&courseId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"enrollments"
+					],
+					"query": [
+						{
+							"key": "studentId",
+							"value": "1"
+						},
+						{
+							"key": "courseId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assign Grade",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/grades?studentId=1&courseId=2&gradeValue=A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"grades"
+					],
+					"query": [
+						{
+							"key": "studentId",
+							"value": "1"
+						},
+						{
+							"key": "courseId",
+							"value": "2"
+						},
+						{
+							"key": "gradeValue",
+							"value": "A"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Course as Completed",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/grades/complete?studentId=1&courseId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"grades",
+						"complete"
+					],
+					"query": [
+						{
+							"key": "studentId",
+							"value": "1"
+						},
+						{
+							"key": "courseId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Grades for a Student",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/grades/student/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"grades",
+						"student",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Academic Summary",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/grades/summary/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"grades",
+						"summary",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload and Track: Upload CSV",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Hussan/Desktop/new.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/upload/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"upload",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload and Track: Check Import Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTc1MTM4NzEwNywiZXhwIjoxNzUxNDczNTA3fQ.QVI9Y95ypowzhwIW1MYoKaSCtClWVJC5ULCnQWWIink",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/upload/status/import-1751388986738",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"upload",
+						"status",
+						"import-1751388986738"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
