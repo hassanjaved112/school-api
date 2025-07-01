@@ -1,5 +1,8 @@
 # School Management REST API
 
+**Important**: Please find the `application.properties.example` file in the root folder.  
+	       Rename it to `application.properties` and add your MySQL credentials before running the project.
+
 A secure, domain-driven Spring Boot application to manage student records, courses, enrollments, and grades — complete with JWT-based admin authentication, async file uploads, business validation, and Swagger UI.
 
 *Only a registered and logged-in School Admin can perform all the operations
